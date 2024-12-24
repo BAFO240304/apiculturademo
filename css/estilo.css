@@ -128,7 +128,7 @@
         height: 300px;
     }
 }
-@media (max-width: 350px) {
+@media (max-width: 450px) {
     /* Ajustes del contenedor de la vista previa */
     .preview-container {
         height: 450px;
