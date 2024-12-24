@@ -72,7 +72,7 @@
 /* Estilos específicos para pantallas de 600px o menos */
 @media (max-width: 600px) {
     .preview-container {
-        height: 400px;
+        height: 550px;
     }
 }
 
