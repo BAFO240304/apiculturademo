@@ -4,37 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vista Previa de Sitio Web</title>
+    <title>TechWizard</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
         rel="stylesheet">
+        <link rel="icon" href="img/icon.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/menu.js"></script>
 </head>
 
-<body class="bg-light">
+<body class="bg-light tama">
     <!-- Menú de Navegación -->
-    <nav class="navbar navbar-expand-lg navbar-custom">
-        <div class="container">
-            <a class="navbar-brand" href="#">Mi Sitio Web</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#productos">Productos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contacto">Contacto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#informacion">Información</a>
-                    </li>
-                </ul>
-            </div>
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container">
+        <a class="navbar-brand" href="#">TechWizard</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i> <!-- Aquí el icono de Font Awesome -->
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#productos">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contacto">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#informacion">Información</a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <!-- Contenido -->
     <div class="container py-5">
@@ -80,44 +83,47 @@
         </div>
     </div>
     <br>
-<hr style="border: 1px solid #333; width: 70%; margin: 0 auto;">
-<br>
+    <hr style="border: 1px solid #333; width: 70%; margin: 0 auto;">
+    <br>
 
-<div class="container my-5">
-    <h2 class="text-center mb-4" style="color: #212121;">¿Por qué elegirnos?</h2>
-    <div class="row justify-content-center">
-        <!-- Columna 1: Velocidad Óptima -->
-        <div class="col-md-4 col-12 text-center">
-            <i class="bi bi-speedometer2" style="font-size: 3rem; color: #006400;"></i>
-            <h4 style="color: #212121;">Velocidad Óptima</h4>
-            <p style="color: #555;">Optimizamos tu sitio para tiempos de carga rápidos y una experiencia de usuario fluida.</p>
-        </div>
-        <!-- Columna 2: Diseño Responsivo -->
-        <div class="col-md-4 col-12 text-center">
-            <i class="bi bi-pc-display-horizontal" style="font-size: 3rem; color: #006400;"></i>
-            <h4 style="color: #212121;">Diseño Responsivo</h4>
-            <p style="color: #555;">Tu sitio web se verá increíble en cualquier dispositivo, desde móviles hasta computadoras.</p>
-        </div>
-        <!-- Columna 3: Seguridad Garantizada -->
-        <div class="col-md-4 col-12 text-center">
-            <i class="bi bi-lock" style="font-size: 3rem; color: #006400;"></i>
-            <h4 style="color: #212121;">Seguridad Garantizada</h4>
-            <p style="color: #555;">Implementamos medidas avanzadas para proteger tu sitio web y tus datos.</p>
-        </div>
-        <!-- Columna 4: Personalización Total -->
-        <div class="col-md-4 col-12 text-center">
-            <i class="bi bi-brush" style="font-size: 3rem; color: #006400;"></i>
-            <h4 style="color: #212121;">Personalización Total</h4>
-            <p style="color: #555;">Creamos diseños únicos que se adaptan a las necesidades y la imagen de tu negocio.</p>
-        </div>
-        <!-- Columna 5: Soporte Especializado -->
-        <div class="col-md-4 col-12 text-center">
-            <i class="bi bi-person-check" style="font-size: 3rem; color: #006400;"></i>
-            <h4 style="color: #212121;">Soporte Especializado</h4>
-            <p style="color: #555;">Ofrecemos soporte continuo para que tu sitio web esté siempre actualizado.</p>
+    <div class="container my-5">
+        <h2 class="text-center mb-4" style="color: #212121;">¿Por qué elegirnos?</h2>
+        <div class="row justify-content-center">
+            <!-- Columna 1: Velocidad Óptima -->
+            <div class="col-md-4 col-12 text-center">
+                <i class="bi bi-speedometer2" style="font-size: 3rem; color: #2c316e;"></i>
+                <h4 style="color: #212121;">Velocidad Óptima</h4>
+                <p style="color: #555;">Optimizamos tu sitio para tiempos de carga rápidos y una experiencia de usuario
+                    fluida.</p>
+            </div>
+            <!-- Columna 2: Diseño Responsivo -->
+            <div class="col-md-4 col-12 text-center">
+                <i class="bi bi-pc-display-horizontal" style="font-size: 3rem; color: #2c316e;"></i>
+                <h4 style="color: #212121;">Diseño Responsivo</h4>
+                <p style="color: #555;">Tu sitio web se verá increíble en cualquier dispositivo, desde móviles hasta
+                    computadoras.</p>
+            </div>
+            <!-- Columna 3: Seguridad Garantizada -->
+            <div class="col-md-4 col-12 text-center">
+                <i class="bi bi-lock" style="font-size: 3rem; color: #2c316e;"></i>
+                <h4 style="color: #212121;">Seguridad Garantizada</h4>
+                <p style="color: #555;">Implementamos medidas avanzadas para proteger tu sitio web y tus datos.</p>
+            </div>
+            <!-- Columna 4: Personalización Total -->
+            <div class="col-md-4 col-12 text-center">
+                <i class="bi bi-brush" style="font-size: 3rem; color: #2c316e;"></i>
+                <h4 style="color: #212121;">Personalización Total</h4>
+                <p style="color: #555;">Creamos diseños únicos que se adaptan a las necesidades y la imagen de tu
+                    negocio.</p>
+            </div>
+            <!-- Columna 5: Soporte Especializado -->
+            <div class="col-md-4 col-12 text-center">
+                <i class="bi bi-person-check" style="font-size: 3rem; color: #2c316e;"></i>
+                <h4 style="color: #212121;">Soporte Especializado</h4>
+                <p style="color: #555;">Ofrecemos soporte continuo para que tu sitio web esté siempre actualizado.</p>
+            </div>
         </div>
     </div>
-</div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>

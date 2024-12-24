@@ -1,3 +1,8 @@
+.tama{
+    max-width: 1900px !important;
+    margin: auto;
+    border: #000 solid 1px;
+}
 /* Estilos personalizados */
 .preview-container {
     border-radius: 10px;
@@ -46,7 +51,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    color: #ffc107;
+    color: #0c1bc4;
 }
 
 .alert {
@@ -54,25 +59,56 @@
     background: #e9f7fc;
     color: #0d6efd;
 }
-
+/* Barra de navegación personalizada */
 .navbar-custom {
-    background-color: #ffc107;
+    background-color: #2c316e !important; /* Fondo oscuro */
 }
 
+/* Estilo para el logo y el nombre de la empresa */
+.navbar-custom .navbar-brand {
+    font-family: 'Arial', sans-serif; /* Fuente limpia y moderna */
+    font-weight: bold; /* Hace que el nombre se vea más fuerte */
+    color: #fff; /* Color blanco */
+    font-size: 1.3rem; /* Tamaño de fuente más grande */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras para dar un toque más elegante */
+    transition: all 0.3s ease; /* Animación suave para efectos de hover */
+}
+
+/* Efecto hover para la marca */
+.navbar-custom .navbar-brand:hover {
+    color: #cfcece; /* Color amarillo para el hover */
+    text-decoration: none; /* Sin subrayado */
+    transform: scale(1.05); /* Levemente más grande al pasar el ratón */
+}
+
+/* Estilo para el logo y los enlaces */
 .navbar-custom .navbar-brand,
 .navbar-custom .nav-link {
-    color: #343a40;
+    color: #ffffff; /* Color blanco para texto */
 }
 
-.carousel-item img {
-    max-height: 500px;
-    object-fit: cover;
+/* Estilo para el botón hamburguesa */
+.navbar-toggler {
+    border: none; /* Eliminar borde del botón */
 }
 
-/* Estilos específicos para pantallas de 600px o menos */
-@media (max-width: 600px) {
+/* Cambiar el color del icono */
+.navbar-toggler i {
+    color: #fff; /* Color blanco para el icono */
+    font-size: 1.5rem; /* Ajustar el tamaño del icono si es necesario */
+}
+
+
+@media (max-width: 1100px) {
     .preview-container {
-        height: 500px;
+        height: 690px !important;
+    }
+}
+/* Estilos específicos para pantallas de 600px o menos */
+@media (max-width: 680px) {
+    .preview-container {
+        height: 500px !important;
     }
 }
 
@@ -82,11 +118,6 @@
         padding-left: 15px;
         padding-right: 15px;
     }
-
-    .preview-container {
-        height: 350px;
-    }
-
     .col-md-4 {
         text-align: center;
         margin-bottom: 20px;
@@ -122,15 +153,10 @@
     .col-6 p {
         font-size: 0.85rem;
     }
-
-    /* Ajustes del contenedor de la vista previa */
-    .preview-container {
-        height: 300px;
-    }
 }
 @media (max-width: 450px) {
     /* Ajustes del contenedor de la vista previa */
     .preview-container {
-        height: 450px;
+        height: 500px !important;
     }
 }
