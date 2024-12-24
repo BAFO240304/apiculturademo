@@ -72,16 +72,10 @@
 /* Estilos específicos para pantallas de 600px o menos */
 @media (max-width: 600px) {
     .preview-container {
-        height: 550px;
+        height: 500px;
     }
 }
 
-/* Estilos responsivos para la sección "¿Por qué elegirnos?" */
-@media (max-width: 992px) {
-    .preview-container {
-        height: 400px;
-    }
-}
 
 @media (max-width: 768px) {
     .container {
@@ -132,5 +126,11 @@
     /* Ajustes del contenedor de la vista previa */
     .preview-container {
         height: 300px;
+    }
+}
+@media (max-width: 350px) {
+    /* Ajustes del contenedor de la vista previa */
+    .preview-container {
+        height: 450px;
     }
 }
