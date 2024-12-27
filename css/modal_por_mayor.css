@@ -1,0 +1,53 @@
+.btn-primary {
+    background-color: #F1C40F !important; /* Amarillo Miel */
+    border-color: #F1C40F !important;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Botón para contacto */
+.contacto {
+    max-width: 50%;
+}
+
+/* Estilo del modal */
+.modal-content {
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important; /* Sombra suave */
+}
+
+.modal-header {
+    background-color: #FFC107  !important; /* Amarillo más cálido */
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.modal-body {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #FFFFFF !important; /* Fondo blanco */
+    color: #333333 !important; /* Texto gris oscuro */
+}
+
+.modal-footer {
+    background-color: #f8f9fa !important; /* Fondo suave */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.modal-footer .btn {
+    border-radius: 5px;
+}
+
+/* Estilo de los enlaces dentro del modal */
+.modal-body a {
+    color: #27AE60 !important; /* Verde cálido */
+    text-decoration: none;
+}
+
+.modal-body a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,119 @@
+/* General */
+.historia-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.historia-content {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.historia-content h1 {
+    font-size: 2.5em;
+    color: #000000;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 4px; /* Haciendo la línea más visible */
+    height: 100%;
+    background: #FFC107 !important; /* Línea de color más visible */
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.timeline-content, .timeline-image {
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-content {
+    flex: 1;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.timeline-date {
+    font-size: 1.5em;
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.timeline-content h2 {
+    font-size: 1.8em;
+    color: #FFC107;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+.timeline-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timeline-image img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .historia-content h1 {
+        font-size: 2em;
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .timeline-item:nth-of-type(2),
+    .timeline-item:nth-of-type(4) {
+        flex-direction: column-reverse;
+    }
+
+    .timeline-item::before {
+        display: none; /* Oculta la línea de tiempo en pantallas pequeñas */
+    }
+
+    .timeline-content {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .timeline-image img {
+        max-width: 80%;
+    }
+}

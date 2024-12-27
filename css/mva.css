@@ -1,0 +1,82 @@
+.margin{
+    margin-top: 130px !important;
+}
+.vision-mision-section {
+    padding: 60px 0;
+    margin: auto;
+    max-width: 90%;
+    background-color: #fafafa;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.vision-mision-section h2 {
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #001450;
+}
+
+.vision-mision-section p {
+    font-size: 18px;
+    color: #6c757d;
+}
+
+.vision-mision-section .vision-image,
+.vision-mision-section .mission-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease; /* Efecto de escala */
+}
+
+.vision-mision-section .vision-image:hover,
+.vision-mision-section .mission-image:hover {
+    transform: scale(1.05); /* Amplía ligeramente al pasar el mouse */
+}
+
+@media (max-width: 768px) {
+    /* Cambia el orden en móviles para la sección de Misión */
+    .vision-mision-section:nth-of-type(2) .col-md-6:first-child {
+        order: 2; /* Imagen de Misión va después del texto en móviles */
+    }
+    .vision-mision-section:nth-of-type(2) .col-md-6:last-child {
+        order: 1; /* Texto de Misión va primero en móviles */
+    }
+}
+
+
+hr.custom-hr {
+    width: 80%;
+    margin: 20px auto;
+    border: 0;
+    height: 2px;
+    background-color: #001450;
+    opacity: 0;
+    transform: scaleX(0);
+    animation: expandLine 1s ease-out forwards;
+}
+
+@keyframes expandLine {
+    0% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}

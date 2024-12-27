@@ -1,0 +1,220 @@
+/* Estilos generales del footer */
+.footer {
+  background: #FFC107;
+  color: white;
+  margin-top: 150px !important;
+  bottom: 0 !important;
+  position: relative;
+}
+.footer_parrafo{
+  color: #fff;
+}
+/* Estilos para los íconos sociales */
+.social-icon {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center; /* Asegura que los íconos estén centrados */
+  display: flex; /* Cambiar a flex para alinear los íconos en línea */
+  justify-content: center; /* Centra los íconos dentro del footer */
+}
+
+/* Estilo del enlace de los íconos sociales */
+.social-icon__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  margin: 0 10px;
+  border-radius: 8px; /* Fondo cuadrado con bordes suaves */
+  text-decoration: none; /* Quita la línea debajo del icono */
+  transition: transform 0.3s, background-color 0.3s;
+}
+.wave {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("../img/wave.png");
+  background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  animation: animateWaves 4s linear infinite;
+}
+
+.wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  animation: animate 4s linear infinite !important;
+}
+
+.wave#wave3 {
+  z-index: 1000;
+  opacity: 0.2;
+  animation: animateWaves 3s linear infinite;
+}
+
+.wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-position-x: 0px;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: -1000px;
+  }
+  100% {
+    background-position-x: 0px;
+  }
+}
+.social-icon__link i {
+  font-size: 25px; /* Tamaño del ícono más pequeño */
+  color: white; /* Color blanco para el ícono */
+}
+
+/* Colores específicos para cada icono */
+.social-icon__link.whatsapp {
+  background-color: #25D366;
+}
+.social-icon__link.whatsapp:hover {
+  background-color: #08ff52;
+}
+
+.social-icon__link.facebook {
+  background-color: #3B5998;
+}
+.social-icon__link.facebook:hover {
+  background-color: #4B68D2;
+}
+
+.social-icon__link.twitter {
+  background-color: #1DA1F2;
+}
+.social-icon__link.twitter:hover {
+  background-color: #1A91DA;
+}
+
+.social-icon__link.instagram {
+  background: linear-gradient(45deg, #F58529, #DD2A7B, #8134B8, #515BD4);
+}
+.social-icon__link.instagram:hover {
+  background: linear-gradient(45deg, #F76D30, #D71E65);
+}
+
+.social-icon__link.linkedin {
+  background-color: #0077B5;
+}
+.social-icon__link.linkedin:hover {
+  background-color: #0095D9;
+}
+
+.social-icon__link.tiktok {
+  background-color: #69C9D0;
+}
+.social-icon__link.tiktok:hover {
+  background-color: #84D3D5;
+}
+
+.social-icon__link.youtube {
+  background-color: #FF0000;
+}
+.social-icon__link.youtube:hover {
+  background-color: #FF4C4C;
+}
+
+.social-icon__link.mobile {
+  background-color: #001f3f; /* Color de fondo para el móvil */
+}
+.social-icon__link.mobile:hover {
+  background-color: #004080; /* Color al hacer hover */
+}
+
+/* Efecto hover general */
+.social-icon__link:hover {
+  transform: scale(1.1);
+}
+
+/* Estilos del menú */
+.menu {
+  margin-top: 20px;
+}
+
+.menu__link {
+  color: white; /* Color del texto */
+  padding: 10px 15px; /* Espaciado del enlace */
+  text-decoration: none; /* Sin subrayado */
+  transition: color 0.3s, border-bottom 0.3s; /* Transiciones suaves */
+  border-radius: 8px; /* Bordes redondeados */
+  position: relative; /* Necesario para el pseudo-elemento */
+}
+
+/* Efecto hover más llamativo */
+.menu__link:hover {
+  color: #f3f3f3; /* Color del texto al hacer hover */
+}
+
+/* Línea debajo del enlace */
+.menu__link::after {
+  content: ""; /* Necesario para mostrar el pseudo-elemento */
+  display: block; /* Mostrar como un bloque */
+  width: 0; /* Inicia con un ancho de 0 */
+  height: 2px; /* Altura de la línea */
+  background: #f3f3f3; /* Color de la línea */
+  transition: width 0.3s; /* Transición suave del ancho */
+  position: absolute; /* Posicionar el pseudo-elemento */
+  left: 50%; /* Centrar horizontalmente */
+  bottom: -5px; /* Posicionar debajo del texto */
+  transform: translateX(-50%); /* Ajustar el centro */
+}
+
+/* Al hacer hover, expandir la línea */
+.menu__link:hover::after {
+  width: 100%; /* Expandir al 100% */
+}
+
+/* Ocultar la línea en tabletas (600px a 900px) */
+@media (max-width: 800px) and (min-width: 100px) {
+  .menu__link::after {
+      display: none; /* No mostrar el pseudo-elemento en pantallas de tabletas */
+  }
+}
+
+
+/* Responsividad */
+@media (max-width: 800px) {
+  .social-icon {
+      display: flex; /* Muestra los íconos sociales en pantallas menores de 800px */
+  }
+}
+
+@media (min-width: 801px) {
+  .social-icon {
+      display: none; /* Oculta los íconos sociales en pantallas mayores a 800px */
+  }
+}
+
+@media (max-width: 999px) {
+  .footer {
+      padding: 20px 0;
+  }
+  .social-icon__link {
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+  }
+}

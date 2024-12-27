@@ -1,0 +1,170 @@
+body {
+    background: #f8f9fa;
+    margin: 0;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    display: flex; /* Usar flex para centrar contenido interno */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+.background-apicultura {
+    background: url('../img/fondo_login.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+.company_title {
+    font-size: 1.5em; /* Aumenta el tamaño de la fuente */
+    color: #ffe600; /* Color que combine con el diseño */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+.company_title b {
+    font-family: 'Georgia', serif; /* Cambiar a una fuente más elegante */
+    color: #ffe600; /* Un color más oscuro para el nombre */
+    font-weight: bold; /* Asegúrate de que sea negrita */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Efecto de relieve */
+}
+
+
+.container-fluid {
+    height: 100%; /* Asegura que el contenedor fluido ocupa toda la altura */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content {
+    width: 90%; /* Reduce el ancho para dispositivos más pequeños */
+    max-width: 600px; /* Ancho máximo para pantallas grandes */
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    display: flex;
+}
+
+.company__info {
+    background-color: #008080;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    padding: 20px;
+}
+
+.fa-android {
+    font-size: 3em;
+}
+
+@media screen and (max-width: 640px) {
+    .main-content {
+        width: 90%;
+        border-radius: 0%;
+    }
+    .login_form {
+        border-bottom-left-radius: 15px !important;
+        border-bottom-right-radius: 15px !important;
+        border-top-right-radius: 0px !important;
+    }
+    .company__info {
+        border-bottom-left-radius: 0px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+    .company__info {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 642px) and (max-width: 800px) {
+    .main-content {
+        width: 70%;
+        border-radius: 0px;
+    }
+    .login_form {
+        border-bottom-left-radius: 15px !important;
+        border-bottom-right-radius: 15px !important;
+        border-top-right-radius: 0px !important;
+    }
+    .company__info {
+        border-bottom-left-radius: 0px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+}
+
+.login_form {
+    background-color: #fff;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding: 20px;
+}
+
+.form__input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #aaa;
+    padding: 1em .5em .5em;
+    padding-left: 2em;
+    outline: none;
+    margin: 1.5em 0;
+    transition: all .5s ease;
+}
+
+.form__input:focus {
+    border-bottom-color: #008080;
+    box-shadow: 0 0 5px rgba(0, 80, 80, 0.4);
+}
+
+.btn {
+    transition: all .5s ease;
+    width: 70%;
+    border-radius: 30px;
+    color: #008080;
+    font-weight: 600;
+    background-color: #fff;
+    border: 1px solid #008080;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+}
+
+.btn:hover, .btn:focus {
+    background-color: #008080;
+    color: #fff;
+}
+
+.input-group {
+    position: relative; /* Para posicionar el ícono */
+}
+
+.input-group-text {
+    border: none; /* Sin borde */
+    background-color: transparent; /* Fondo transparente */
+    cursor: pointer; /* Cambia el cursor a puntero */
+    position: absolute;
+    right: 10px; /* Ajusta la posición del ícono a la derecha */
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%); /* Alinea el ícono verticalmente */
+}
+.btn-submit {
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease !important;
+    width: 70% !important;
+    border-radius: 30px;
+    color: #fff !important; /* Color del texto */
+    font-weight: 600;
+    background-color: #008080 !important; /* Color de fondo */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    cursor: pointer; /* Cambia el cursor a puntero */
+    text-align: center; /* Centra el texto */
+}
+
+.btn-submit:hover, .btn-submit:focus {
+    background-color: #005f5f !important; /* Color de fondo al pasar el ratón */
+    color: #fff; /* Color del texto */
+    transform: scale(1.05) !important; /* Efecto de zoom al pasar el ratón */
+}
+
+.btn-submit:active {
+    transform: scale(0.95); /* Efecto de presión al hacer clic */
+}

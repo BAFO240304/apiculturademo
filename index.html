@@ -8,41 +8,88 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
         rel="stylesheet">
-        <link rel="icon" href="img/icon.jpeg" type="image/x-icon">
+    <link rel="icon" href="img/icon.jpeg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/portada.css">
     <script src="js/menu.js"></script>
+    <script src="js/portada.js"></script>
+    <style>
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #212121;
+            /* Fondo oscuro para los íconos */
+            color: #ffffff;
+            /* Color principal */
+            font-size: 1.2rem;
+            transition: background-color 0.3s, color 0.3s;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            background-color: #333232;
+            /* Fondo amarillo al pasar el mouse */
+            color: #f1f1f1;
+            /* Color del icono cambia a oscuro */
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body class="bg-light tama">
-    <!-- Menú de Navegación -->
-<nav class="navbar navbar-expand-lg navbar-custom">
-    <div class="container">
-        <a class="navbar-brand" href="#">TechWizard</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i> <!-- Aquí el icono de Font Awesome -->
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#productos">Productos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contacto">Contacto</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#informacion">Información</a>
-                </li>
-            </ul>
+    <div class="circular-menu">
+        <div class="circle" onclick="this.parentElement.classList.toggle('open')">
+            <i class="text-white">☰</i>
+        </div>
+        <div class="menu-content">
+            <a href="#hero">Inicio</a>
+            <a href="#videos">ver Demo</a>
+            <a href="#contactame">Contacto</a>
         </div>
     </div>
-</nav>
+    <section id="hero">
+        <div class="bg-animation">
+            <script>
+                function createCircles() {
+                    const container = document.querySelector('.bg-animation');
+                    for (let i = 0; i < 20; i++) {
+                        const circle = document.createElement('div');
+                        circle.classList.add('circle');
 
-    <!-- Contenido -->
+                        // Tamaño aleatorio
+                        const size = Math.random() * 100 + 50;
+                        circle.style.width = `${size}px`;
+                        circle.style.height = `${size}px`;
+
+                        // Posición aleatoria
+                        circle.style.left = `${Math.random() * 100}%`;
+                        circle.style.top = `${Math.random() * 100}%`;
+
+                        // Animación individual
+                        circle.style.animationDuration = `${Math.random() * 10 + 10}s`;
+                        circle.style.animationDelay = `${Math.random() * -15}s`;
+
+                        container.appendChild(circle);
+                    }
+                }
+                document.addEventListener('DOMContentLoaded', createCircles);
+            </script>
+        </div>
+        <div class="container hero-content text-center">
+            <h1 class="display-3 mb-4 fw-bold">Sitio Web de "Apicultura"</h1>
+            <p class="lead mb-5">Desarrollo | Diseño | Creatividad</p>
+        </div>
+    </section>
+    <br>
+    <hr style="border: 1px solid #333; width: 70%; margin: 0 auto;">
+    <br>
     <div class="container py-5">
         <div class="row">
-            <!-- Columna de Vista Previa -->
             <div class="col-lg-8 mb-4">
                 <div class="preview-container">
                     <iframe id="previewFrame" class="preview-frame" src="https://paraderohuanca.com/apicultura"
@@ -50,8 +97,6 @@
                     </iframe>
                 </div>
             </div>
-
-            <!-- Columna de Información -->
             <div class="col-lg-4" id="informacion">
                 <div class="info-panel">
                     <h2>Información</h2>
@@ -85,7 +130,6 @@
     <br>
     <hr style="border: 1px solid #333; width: 70%; margin: 0 auto;">
     <br>
-
     <div class="container my-5">
         <h2 class="text-center mb-4" style="color: #212121;">¿Por qué elegirnos?</h2>
         <div class="row justify-content-center">
@@ -124,8 +168,12 @@
             </div>
         </div>
     </div>
-
-
+    <!-- Lightbox -->
+    <div id="lightbox" onclick="closeLightbox()">
+        <span id="close-lightbox">&times;</span>
+        <img id="lightbox-img" src="" alt="Imagen ampliada">
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 </body>
 

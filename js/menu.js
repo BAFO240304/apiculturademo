@@ -1,13 +1,9 @@
-    document.addEventListener('click', function(event) {
-        // Verificamos si el clic se realizó fuera del contenedor de la barra de navegación
-        if (!event.target.closest('.navbar') && !event.target.closest('.navbar-toggler')) {
-            // Si el menú está abierto y el clic fue fuera del menú, lo cerramos
-            var navbarCollapse = document.querySelector('.navbar-collapse');
-            if (navbarCollapse.classList.contains('show')) {
-                var bootstrapCollapse = new bootstrap.Collapse(navbarCollapse, {
-                    toggle: false
-                });
-                bootstrapCollapse.hide();
-            }
-        }
-    });
+// Cerrar el menú si se hace clic fuera de él
+document.addEventListener('click', function (event) {
+    const circularMenu = document.querySelector('.circular-menu');
+    const isClickInside = circularMenu.contains(event.target);
+
+    if (!isClickInside && circularMenu.classList.contains('open')) {
+        circularMenu.classList.remove('open');
+    }
+});

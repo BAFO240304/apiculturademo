@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/maximo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/menu12.css">
+    <link rel="stylesheet" href="css/maximo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/menu_user.css">
+    <link rel="stylesheet" href="css/lateral_enlace.css">
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/mva.css">
+    <title>Galería de Imágenes</title>
+    <style>
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 150px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+            width: 100%;
+            height: 200px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox .close,
+        .lightbox .prev,
+        .lightbox .next {
+            position: absolute;
+            top: 50%;
+            font-size: 30px;
+            color: #fff;
+            cursor: pointer;
+            z-index: 10000;
+            transform: translateY(-50%);
+        }
+
+        .lightbox .close {
+            right: 20px;
+        }
+
+        .lightbox .prev {
+            left: 20px;
+        }
+
+        .lightbox .next {
+            right: 60px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .gallery-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Menú -->
+    <nav class="navbar panal navbar-expand-lg navbar-light fixed-top shadow-sm">
+        <a class="navbar-brand" href="sitio.html">
+            <img src="img/logo.png" alt="Logo" class="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="sitio.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="acerca.html">Acerca de</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="productos.html">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="galeria.html">Galería</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacto.html">Ubíquenos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <h2>Galería de Imágenes</h2>
+
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300x200?text=Imagen+1" alt="Imagen de galería 1">
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300x200?text=Imagen+3" alt="Imagen de galería 3">
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300x200?text=Imagen+4" alt="Imagen de galería 4">
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300x200?text=Imagen+5" alt="Imagen de galería 5">
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300x200?text=Imagen+6" alt="Imagen de galería 6">
+        </div>
+        
+    </div>
+
+    <div class="lightbox" id="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+        <span class="next" onclick="changeImage(1)">&#10095;</span>
+        <img id="lightbox-img" src="" alt="Imagen agrandada">
+    </div>
+
+    <script>
+        const galleryItems = document.querySelectorAll('.gallery-item img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        let currentIndex = 0;
+
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                currentIndex = index;
+                showLightbox();
+            });
+        });
+
+        function showLightbox() {
+            lightboxImg.src = galleryItems[currentIndex].src;
+            lightbox.style.display = 'flex';
+            lightboxImg.style.opacity = 0;
+            setTimeout(() => {
+                lightboxImg.style.opacity = 1;
+            }, 10);
+        }
+
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+        }
+
+        function changeImage(direction) {
+            currentIndex = (currentIndex + direction + galleryItems.length) % galleryItems.length;
+            lightboxImg.style.opacity = 0;
+            setTimeout(() => {
+                lightboxImg.src = galleryItems[currentIndex].src;
+                lightboxImg.style.opacity = 1;
+            }, 300);
+        }
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+        </div>
+        <div class="container text-center py-4">
+            <ul class="list-inline menu">
+                <li class="list-inline-item"><a class="menu__link" href="sitio.html">Inicio</a></li>
+                <li class="list-inline-item"><a class="menu__link" href="acerca.html">Acerca de</a></li>
+                <li class="list-inline-item"><a class="menu__link" href="productos.html">Productos</a></li>
+                <li class="list-inline-item"><a class="menu__link" href="galeria.html">Galeria</a></li>
+                <li class="list-inline-item"><a class="menu__link" href="contacto.html">Ubiquenos</a></li>
+            </ul>
+            <p class="footer_parrafo">&copy; 2024 | La Abeja Reina</p>
+        </div>
+    </footer>
+    <div class="position-fixed bottom-0 end-0 m-3">
+        <a href="https://wa.me/1234567890" target="_blank" class="btn contact-button whatsapp" data-bs-toggle="tooltip"
+            title="Escríbenos para más información">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://facebook.com" target="_blank" class="btn contact-button facebook" data-bs-toggle="tooltip"
+            title="Visita nuestra página de Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggleButton = document.querySelector('.navbar-toggler');
+            const menuCollapse = document.querySelector('#navbarNav');
+
+            function closeMenu() {
+                const bsCollapse = new bootstrap.Collapse(menuCollapse, {
+                    toggle: false
+                });
+                bsCollapse.hide();
+            }
+
+            // Cerrar el menú si se hace clic fuera de él
+            document.addEventListener('click', function (event) {
+                if (!menuCollapse.contains(event.target) && !menuToggleButton.contains(event.target)) {
+                    closeMenu();
+                }
+            });
+
+            // Inicializar tooltips
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+    </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

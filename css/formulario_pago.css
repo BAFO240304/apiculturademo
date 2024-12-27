@@ -1,0 +1,97 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+    padding: 2rem 0;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background: linear-gradient(135deg, #FFB84D, #FFD700, #F4A300) !important;
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.form-control,
+.btn {
+    border-radius: 10px;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #28a745, #5cd85c);
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background: #1e7e34;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.payment-method {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+.payment-details{
+    font-size: 25px;
+}
+.payment-method:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.payment-method img {
+    width: 150px;
+    margin-right: 1rem;
+}
+small.text-warning {
+    color: #FFA500 !important;
+    font-size: 15px; /* Un azul claro que es agradable y no distrae demasiado */
+}
+
+/* Media Query para pantallas de menos de 700px */
+@media (max-width: 700px) {
+    .payment-method {
+        display: block; /* Hace que los elementos se apilen en columna */
+        text-align: center; /* Centra el texto en dispositivos pequeños */
+    }
+
+    .payment-method img {
+        width: 100px; /* Reduce el tamaño de la imagen para dispositivos pequeños */
+        margin: 0 auto 1rem; /* Centra la imagen y da un margen abajo */
+    }
+    .payment-details {
+        margin-top: 35px;
+        text-align: center; /* Asegura que los detalles del pago estén alineados a la izquierda */
+    }
+    small.text-warning {
+        color: #FFA500 !important;
+        font-size: 12px; /* Un azul claro que es agradable y no distrae demasiado */
+    }
+}
+
+
+.section-title {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #333;
+}
+#cantidad, #total {
+    display: none;
+}

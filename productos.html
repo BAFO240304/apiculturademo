@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apicultura y Miel</title>
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/menu12.css">
+    <link rel="stylesheet" href="css/por.css">
+    <link rel="stylesheet" href="css/servicios_index.css">
+    <link rel="stylesheet" href="css/proceso_abej.css">
+    <link rel="stylesheet" href="css/beneficio_index.css">
+    <link rel="stylesheet" href="css/maximo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/menu_user.css">
+    <link rel="stylesheet" href="css/lateral_enlace.css">
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/acerc.css">
+    <link rel="stylesheet" href="css/mva.css">
+    <link rel="stylesheet" href="css/producto.css">
+</head>
+
+<body>
+    <!-- Menú -->
+    <nav class="navbar panal navbar-expand-lg navbar-light fixed-top shadow-sm">
+        <a class="navbar-brand" href="sitio.html">
+            <img src="img/logo.png" alt="Logo" class="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="sitio.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="acerca.html">Acerca de</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="productos.html">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="galeria.html">Galería</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacto.html">Ubíquenos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="mt-5 tama">
+        <!-- Filtros -->
+        <div class="sidebar-filter">
+            <form id="filter-form">
+                <h4>Categorías</h4>
+                <div id="category-filters">
+                    <!-- Las categorías se cargarán dinámicamente -->
+                </div>
+                <div class="filter-buttons mt-3">
+                    <button type="button" onclick="applyFilters()" class="btn btn-warning"><i class="fas fa-filter"></i> Filtrar</button>
+                    <button type="button" onclick="resetFilters()" class="btn btn-secondary"><i class="fas fa-undo"></i> Restablecer</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Búsqueda -->
+        <div class="main-content">
+            <div class="parte_superior mb-4">
+                <h4>Sumérgete en Nuestros Productos</h4>
+                <form id="search-form" class="filtro">
+                    <input type="text" id="search-input" placeholder="Filtrar por nombre" class="input_filtro">
+                    <button type="button" onclick="applyFilters()" class="btn_filtrar">Buscar</button>
+                </form>
+            </div>
+
+            <!-- Productos -->
+            <div class="row" id="product-container">
+                <!-- Los productos se cargarán dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const products = [
+            { id: 1, titulo: "Miel de Abeja", precio: 50.00, stock: 10, categoria: 1, imagen: "miel.jpg" },
+            { id: 2, titulo: "Propóleo", precio: 50.00, stock: 5, categoria: 3, imagen: "propoleo.jpg" },
+            { id: 3, titulo: "Polen", precio: 50.00, stock: 8, categoria: 2, imagen: "polen.jpg" },
+            { id: 4, titulo: "Colmena", precio: 400.00, stock: 1, categoria: 4, imagen: "colmena.png" }
+        ];
+
+        const categories = [
+            { id: 1, nombre: "Miel" },
+            { id: 2, nombre: "Polen" },
+            { id: 3, nombre: "Propoleo" },
+            { id: 4, nombre: "Colmena" }
+        ];
+
+        function loadCategoryFilters() {
+            const categoryContainer = document.getElementById("category-filters");
+            categories.forEach(cat => {
+                const checkbox = document.createElement("div");
+                checkbox.innerHTML = `
+                    <input type="checkbox" class="category-checkbox" value="${cat.id}">
+                    ${cat.nombre}
+                `;
+                categoryContainer.appendChild(checkbox);
+            });
+        }
+
+        function renderProducts(filteredProducts) {
+            const productContainer = document.getElementById("product-container");
+            productContainer.innerHTML = "";
+            if (filteredProducts.length > 0) {
+                filteredProducts.forEach(product => {
+                    const productCard = document.createElement("div");
+                    productCard.classList.add("col-12", "col-sm-6", "col-md-4", "col-lg-3", "mb-4");
+                    productCard.innerHTML = `
+                        <a href="productos_detallados.html?id=${product.id}" class="text-decoration-none">
+                            <div class="card h-100">
+                                <img src="img/${product.imagen}" class="card-img-top" alt="${product.titulo}">
+                                <div class="card-body">
+                                    <h5 class="card-title">${product.titulo}</h5>
+                                    <p class="card-text card-precio"><strong>S/. ${product.precio.toFixed(2)}</strong></p>
+                                </div>
+                            </div>
+                        </a>
+                    `;
+                    productContainer.appendChild(productCard);
+                });
+            } else {
+                productContainer.innerHTML = "<p>No hay productos disponibles.</p>";
+            }
+        }
+
+        function applyFilters() {
+            const searchQuery = document.getElementById("search-input").value.toLowerCase();
+            const selectedCategories = Array.from(document.querySelectorAll(".category-checkbox:checked"))
+                .map(input => parseInt(input.value));
+
+            const filteredProducts = products.filter(product => {
+                const matchesName = product.titulo.toLowerCase().includes(searchQuery);
+                const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(product.categoria);
+                return matchesName && matchesCategory;
+            });
+
+            renderProducts(filteredProducts);
+        }
+
+        function resetFilters() {
+            document.getElementById("search-input").value = "";
+            document.querySelectorAll(".category-checkbox").forEach(checkbox => checkbox.checked = false);
+            renderProducts(products);
+        }
+
+        loadCategoryFilters();
+        renderProducts(products);
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+        </div>
+        <div class="container text-center py-4">
+            <ul class="list-inline menu">
+                <li class="list-inline-item"><a class="menu__link" href="sitio.html">Inicio</a></li>
+                <li class="list-inline-item"><a class="menu__link" href="acerca.html">Acerca de</a></li>
+                <li class="list-inline-item"><a class="menu__link" href="productos.html">Productos</a></li>
+                <li class="list-inline-item"><a class="menu__link" href="galeria.html">Galeria</a></li>
+                <li class="list-inline-item"><a class="menu__link" href="contacto.html">Ubiquenos</a></li>
+            </ul>
+            <p class="footer_parrafo">&copy; 2024 | La Abeja Reina</p>
+        </div>
+    </footer>
+    <div class="position-fixed bottom-0 end-0 m-3">
+        <a href="https://wa.me/1234567890" target="_blank" class="btn contact-button whatsapp" data-bs-toggle="tooltip"
+            title="Escríbenos para más información">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://facebook.com" target="_blank" class="btn contact-button facebook" data-bs-toggle="tooltip"
+            title="Visita nuestra página de Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggleButton = document.querySelector('.navbar-toggler');
+            const menuCollapse = document.querySelector('#navbarNav');
+
+            function closeMenu() {
+                const bsCollapse = new bootstrap.Collapse(menuCollapse, {
+                    toggle: false
+                });
+                bsCollapse.hide();
+            }
+
+            // Cerrar el menú si se hace clic fuera de él
+            document.addEventListener('click', function (event) {
+                if (!menuCollapse.contains(event.target) && !menuToggleButton.contains(event.target)) {
+                    closeMenu();
+                }
+            });
+
+            // Inicializar tooltips
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+    </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

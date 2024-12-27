@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apicultura y Miel</title>
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/menu12.css">
+    <link rel="stylesheet" href="css/por.css">
+    <link rel="stylesheet" href="css/servicios_index.css">
+    <link rel="stylesheet" href="css/proceso_abej.css">
+    <link rel="stylesheet" href="css/beneficio_index.css">
+    <link rel="stylesheet" href="css/maximo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/menu_user.css">
+    <link rel="stylesheet" href="css/lateral_enlace.css">
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body>
+    <!-- Menú -->
+    <nav class="navbar panal navbar-expand-lg navbar-light fixed-top shadow-sm">
+        <a class="navbar-brand" href="index.html">
+            <img src="img/logo.png" alt="Logo" class="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="acerca.html">Acerca de</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="productos.html">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="galeria.html">Galería</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacto.html">Ubíquenos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Carrusel -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="hero" style="background-image: url('img/fondo2.jpg');">
+                    <div class="hero-content">
+                        <h1>Bienvenidos a la Apicultura</h1>
+                        <p>Descubre los beneficios de nuestra miel.</p>
+                        <a href="#servicios" class="btn btn-primary">Saber más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="hero" style="background-image: url('img/fondo3.jpg');">
+                    <div class="hero-content">
+                        <h1>Cuidamos de nuestras Abejas</h1>
+                        <p>Apoyamos la biodiversidad.</p>
+                        <a href="#beneficios" class="btn btn-primary">Ver Beneficios</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+
+    <!-- Servicios -->
+    <div class="container" id="servicios">
+        <h1 class="servicios__title">Servicios</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="tilt-card">
+                    <div class="tilt-card__bg" style="background-image: url('img/fondo2.jpg');"></div>
+                    <div class="tilt-card__inner">
+                        <img src="img/bien2.gif" width="50px" alt="">
+                        <h3 class="tilt-card__title">Miel</h3>
+                        <p>Disfruta de nuestra miel pura y natural.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="tilt-card">
+                    <div class="tilt-card__bg" style="background-image: url('img/fondo3.jpg');"></div>
+                    <div class="tilt-card__inner">
+                        <img src="img/bien2.gif" width="50px" alt="">
+                        <h3 class="tilt-card__title">Abejas</h3>
+                        <p>Cuidamos el bienestar de las abejas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="tilt-card">
+                    <div class="tilt-card__bg" style="background-image: url('img/fondo2.jpg');"></div>
+                    <div class="tilt-card__inner">
+                        <img src="img/bien2.gif" width="50px" alt="">
+                        <h3 class="tilt-card__title">Colmenas</h3>
+                        <p>Ofrecemos colmenas de alta calidad.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Beneficios -->
+    <div class="container" id="beneficios" style="max-width: 90%;">
+        <h1 class="beneficios__title">Beneficios de Consumir Miel</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="beneficio-card">
+                    <i class="fas fa-heartbeat beneficio-card__icon"></i>
+                    <h3 class="beneficio-card__title">Rica en Antioxidantes</h3>
+                    <p>Reduce el riesgo de enfermedades cardíacas.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="beneficio-card">
+                    <i class="fas fa-shield-virus beneficio-card__icon"></i>
+                    <h3 class="beneficio-card__title">Propiedades Antibacterianas</h3>
+                    <p>Útil para heridas y quemaduras.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="beneficio-card">
+                    <i class="fas fa-utensils beneficio-card__icon"></i>
+                    <h3 class="beneficio-card__title">Mejora la Digestión</h3>
+                    <p>Actúa como un prebiótico natural.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Proceso de Producción -->
+    <section class="historia-container">
+        <div class="historia-content">
+            <h1 class="beneficios__title">Proceso de Producción</h1>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h2>Recolección de Néctar</h2>
+                        <p>Las abejas recolectan el néctar de las flores.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="img/recoleccion.jpg" alt="Inicios">
+                    </div>
+                </div>
+                <div class="timeline-item reverse">
+                    <div class="timeline-image">
+                        <img src="img/Abejas.jpg" alt="Transformación">
+                    </div>
+                    <div class="timeline-content">
+                        <h2>Transformación en Miel</h2>
+                        <p>El néctar se convierte en miel dentro de la colmena.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+        </div>
+        <div class="container text-center py-4">
+            <ul class="list-inline menu">
+                <li class="list-inline-item"><a class="menu__link" href="sitio.html">Inicio</a></li>
+                <li class="list-inline-item"><a class="menu__link" href="acerca.html">Acerca de</a></li>
+                <li class="list-inline-item"><a class="menu__link" href="productos.html">Productos</a></li>
+                <li class="list-inline-item"><a class="menu__link" href="galeria.html">Galeria</a></li>
+                <li class="list-inline-item"><a class="menu__link" href="contacto.html">Ubiquenos</a></li>
+            </ul>
+            <p class="footer_parrafo">&copy; 2024 | La Abeja Reina</p>
+        </div>
+    </footer>
+    <div class="position-fixed bottom-0 end-0 m-3">
+        <a href="https://wa.me/1234567890" target="_blank" class="btn contact-button whatsapp" data-bs-toggle="tooltip"
+            title="Escríbenos para más información">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://facebook.com" target="_blank" class="btn contact-button facebook" data-bs-toggle="tooltip"
+            title="Visita nuestra página de Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggleButton = document.querySelector('.navbar-toggler');
+            const menuCollapse = document.querySelector('#navbarNav');
+
+            function closeMenu() {
+                const bsCollapse = new bootstrap.Collapse(menuCollapse, {
+                    toggle: false
+                });
+                bsCollapse.hide();
+            }
+
+            // Cerrar el menú si se hace clic fuera de él
+            document.addEventListener('click', function (event) {
+                if (!menuCollapse.contains(event.target) && !menuToggleButton.contains(event.target)) {
+                    closeMenu();
+                }
+            });
+
+            // Inicializar tooltips
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+    </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

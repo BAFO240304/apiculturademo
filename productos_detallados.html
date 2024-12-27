@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/<?php echo htmlspecialchars($active_logo['ruta_imagen']); ?>" type="image/x-icon">
+    <title>
+        Productos Detallados
+    </title>
+    <link rel="stylesheet" href="css/productos_detalla.css">
+    <link rel="stylesheet" href="css/modal_por_mayor.css">
+    <link rel="stylesheet" href="css/maximo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/menu12.css">
+    <link rel="stylesheet" href="css/por.css">
+    <link rel="stylesheet" href="css/servicios_index.css">
+    <link rel="stylesheet" href="css/proceso_abej.css">
+    <link rel="stylesheet" href="css/beneficio_index.css">
+    <link rel="stylesheet" href="css/maximo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/menu_user.css">
+    <link rel="stylesheet" href="css/lateral_enlace.css">
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/mva.css">
+</head>
+
+<body>
+    <!-- Menú -->
+    <nav class="navbar panal navbar-expand-lg navbar-light fixed-top shadow-sm">
+        <a class="navbar-brand" href="sitio.html">
+            <img src="img/logo.png" alt="Logo" class="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="sitio.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="acerca.html">Acerca de</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="productos.html">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="galeria.html">Galería</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacto.html">Ubíquenos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br><br><br>
+    <!-- Contenedor principal del producto -->
+    <div class="container-fluid py-5">
+        <div class="row principal_producto justify-content-center">
+            <div class="col-12 col-lg-11 col-xl-10 mb-4">
+                <div class="card h-100 d-flex flex-column flex-lg-row shadow-lg">
+                    <!-- Imagen del producto -->
+                    <div class="col-lg-6 p-0">
+                        <img src="img/${product.imagen}" class="imagen-adaptable" alt="${product.titulo}">
+                    </div>
+
+                    <!-- Detalles del producto -->
+                    <div class="col-lg-6 d-flex flex-column justify-content-center p-4 p-lg-5">
+                        <h2 class="card-title mb-3 text-dark">${product.titulo}</h2>
+                        <p class="card-text text-muted mb-2">${product.descripcion}</p>
+                        <p class="card-text text-secondary mb-3"><strong>Beneficios:</strong> ${product.beneficios}</p>
+                        <p class="card-text text-success mb-2"><strong>Precio por unidad: S/.
+                                ${product.precio.toFixed(2)}</strong></p>
+                        <p class="card-text text-primary"><strong>Disponible: ${product.stock} unidades</strong></p>
+
+                        <!-- Formulario para seleccionar cantidad y comprar -->
+                        <form id="formCompra" action="compra_unidad.html" method="GET">
+                            <input type="hidden" name="id_producto" value="${product.id}">
+                            <div class="form-group">
+                                <input type="number" id="cantidad" name="cantidad" class="form-control" min="1"
+                                    max="${product.stock}" value="1" required>
+                            </div>
+                            <br>
+                            <div class="row g-2">
+                                <div class="col-12 col-lg-6">
+                                    <input type="hidden" name="precio" value="${product.precio}">
+                                    <button type="submit" class="btn btn-warning text-white w-100">Comprar por
+                                        unidad</button>
+                                </div>
+                            </div>
+                        </form>
+                        <br>
+                        <!-- Botón para abrir el modal -->
+                        <button class="btn btn-primary contacto mt-4" data-bs-toggle="modal"
+                            data-bs-target="#modalContacto">
+                            Solicita información al por mayor
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="modalContacto" tabindex="-1" aria-labelledby="modalContactoLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header text-white">
+                                        <h5 class="modal-title" id="modalContactoLabel">¿Deseas comprar al por mayor?
+                                        </h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Para realizar compras al por mayor, por favor contáctanos a través de
+                                            WhatsApp:</p>
+                                        <ul id="contactosWhatsApp">
+                                            <li><a href="https://wa.me/923456789" target="_blank"
+                                                    class="text-success"><i class="fab fa-whatsapp"></i>923456789</a>
+                                            </li>
+                                            
+                                            <li><a href="https://wa.me/987654321" target="_blank"
+                                                    class="text-success"><i class="fab fa-whatsapp"></i>987654321</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Productos Relacionados -->
+    <h3 class="mt-5 relacionados_titulo">Productos Relacionados:</h3>
+    <div class="container py-5">
+        <div class="row" id="productosRelacionados">
+            <!-- Aquí se insertarán los productos relacionados dinámicamente -->
+        </div>
+    </div>
+
+    <!-- Script de JavaScript -->
+    <script>
+        // Obtener el id del producto de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+
+        // Simulación de los productos disponibles (esto debe ser reemplazado por datos reales desde la base de datos)
+        const productos = [
+            {
+                id: 1,
+                imagen: "miel.jpg",
+                titulo: "Miel Natural",
+                descripcion: "Miel de abeja pura, 100% natural.",
+                beneficios: "Ayuda a la digestión, mejora el sistema inmunológico.",
+                precio: 50.00,
+                stock: 40
+            },
+            {
+                id: 2,
+                imagen: "polen.jpg",
+                titulo: "Polen",
+                descripcion: "Polen de abeja recolectado de flores frescas.",
+                beneficios: "Mejora la energía y la concentración.",
+                precio: 60.00,
+                stock: 20
+            },
+            {
+                id: 3,
+                imagen: "propoleo.jpg",
+                titulo: "Propóleo",
+                descripcion: "Propóleo natural para mejorar la salud.",
+                beneficios: "Refuerza el sistema inmune y combate infecciones.",
+                precio: 50.00,
+                stock: 20
+            },
+            {
+                id: 4,
+                imagen: "colmena.png",
+                titulo: "Colmena",
+                descripcion: "Colmena de alta calidad para apicultores.",
+                beneficios: "Durabilidad y facilidad de uso en la apicultura.",
+                precio: 400.00,
+                stock: 1
+            }
+        ];
+
+        // Buscar el producto correspondiente al id en la URL
+        const product = productos.find(producto => producto.id == productId);
+
+        if (product) {
+            // Insertar los datos del producto principal
+            document.querySelector('.imagen-adaptable').src = `img/${product.imagen}`;
+            document.querySelector('.imagen-adaptable').alt = product.titulo;
+            document.querySelector('.card-title').innerText = product.titulo;
+            document.querySelector('.card-text').innerText = product.descripcion;
+            document.querySelector('.text-secondary').innerHTML = `<strong>Beneficios:</strong> ${product.beneficios}`;
+            document.querySelector('.text-success').innerHTML = `<strong>Precio por unidad: S/. ${product.precio.toFixed(2)}</strong>`;
+            document.querySelector('.text-primary').innerHTML = `<strong>Disponible: ${product.stock} unidades</strong>`;
+        }
+
+        // Insertar productos relacionados
+        const productosRelacionadosContainer = document.getElementById("productosRelacionados");
+        productos.forEach(producto => {
+            if (producto.id !== productId) {  // Excluir el producto actual de la lista de relacionados
+                const productoCard = document.createElement("div");
+                productoCard.classList.add("col-lg-3", "col-md-6", "col-12", "mb-4", "relacionados");
+
+                productoCard.innerHTML = `
+                <div class="card altura_relacionados h-100">
+                    <img src="img/${producto.imagen}" class="card-img-top" alt="Producto Relacionado">
+                    <div class="card-body">
+                        <h5 class="card-title">${producto.titulo}</h5>
+                        <p class="card-text precio_relacionado"><strong>Precio: S/. ${producto.precio.toFixed(2)}</strong></p>
+                        <a href="productos_detallados.html?id=${producto.id}" class="btn btn-warning text-white w-100">Más Detalles</a>
+                    </div>
+                </div>
+            `;
+                productosRelacionadosContainer.appendChild(productoCard);
+            }
+        });
+    </script>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+        </div>
+        <div class="container text-center py-4">
+            <ul class="list-inline menu">
+                <li class="list-inline-item"><a class="menu__link" href="sitio.html">Inicio</a></li>
+                <li class="list-inline-item"><a class="menu__link" href="acerca.html">Acerca de</a></li>
+                <li class="list-inline-item"><a class="menu__link" href="productos.html">Productos</a></li>
+                <li class="list-inline-item"><a class="menu__link" href="galeria.html">Galeria</a></li>
+                <li class="list-inline-item"><a class="menu__link" href="contacto.html">Ubiquenos</a></li>
+            </ul>
+            <p class="footer_parrafo">&copy; 2024 | La Abeja Reina</p>
+        </div>
+    </footer>
+    <div class="position-fixed bottom-0 end-0 m-3">
+        <a href="https://wa.me/1234567890" target="_blank" class="btn contact-button whatsapp" data-bs-toggle="tooltip"
+            title="Escríbenos para más información">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://facebook.com" target="_blank" class="btn contact-button facebook" data-bs-toggle="tooltip"
+            title="Visita nuestra página de Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggleButton = document.querySelector('.navbar-toggler');
+            const menuCollapse = document.querySelector('#navbarNav');
+
+            function closeMenu() {
+                const bsCollapse = new bootstrap.Collapse(menuCollapse, {
+                    toggle: false
+                });
+                bsCollapse.hide();
+            }
+
+            // Cerrar el menú si se hace clic fuera de él
+            document.addEventListener('click', function (event) {
+                if (!menuCollapse.contains(event.target) && !menuToggleButton.contains(event.target)) {
+                    closeMenu();
+                }
+            });
+
+            // Inicializar tooltips
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+    </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

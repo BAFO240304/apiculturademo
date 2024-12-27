@@ -1,0 +1,205 @@
+/* Estilos generales del contenedor principal */
+.principal_producto .card {
+    border: none;
+    overflow: hidden;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+/* Adaptar la imagen a todo el espacio disponible en la columna */
+.imagen-adaptable {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Estructura flexible de la tarjeta */
+.principal_producto .card {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    /* En pantallas medianas y grandes, organiza en fila */
+    .principal_producto .card {
+        flex-direction: row;
+        height: 100%; /* Ocupa el 100% de la altura de la tarjeta */
+    }
+
+    /* Limita la altura de la imagen en pantallas grandes */
+    .imagen-adaptable {
+        max-height: 100%;
+    }
+}
+
+/* Contenedor de la imagen */
+.principal_producto .card .producto-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Ajustes responsive */
+@media (max-width: 991px) {
+    .principal_producto .card {
+        flex-direction: column !important;
+    }
+    
+    .principal_producto .card > div {
+        width: 100% !important;
+    }
+    
+    /* Ajuste de altura de imagen para tablet */
+    .principal_producto .card div[style*="max-height"] {
+        max-height: 500px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    /* Ajuste de altura de imagen para móvil */
+    .principal_producto .card div[style*="max-height"] {
+        max-height: 350px !important;
+    }
+    .relacionados .card-img-top {
+        height: 100px !important;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajuste de altura de imagen para móviles pequeños */
+    .principal_producto .card div[style*="max-height"] {
+        max-height: 250px !important;
+    }
+}
+
+/* Estilos para los detalles del producto */
+.principal_producto .card-body {
+    padding: 2rem;
+}
+
+/* Estilos para los contactos */
+.contactos {
+    margin-top: 2rem;
+}
+
+.whatsapp-contact {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.whatsapp-contact svg {
+    width: 24px;
+    height: 24px;
+}
+
+.contact-link {
+    color: #25D366;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Título de la sección de productos relacionados */
+.relacionados_titulo {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+/* Estilos para las tarjetas de productos relacionados */
+.relacionados .card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-height: 450px; /* Altura máxima para la tarjeta */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Efecto de hover en las tarjetas */
+.relacionados .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajuste de la imagen del producto */
+.relacionados .card-img-top {
+    height: 280px; /* Altura máxima de la imagen */
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    width: 100%; /* Asegura que la imagen ocupe el ancho completo */
+}
+
+/* Ajuste de la altura de la tarjeta */
+.altura_relacionados {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Estilos para el título del producto */
+.relacionados .card-title {
+    font-size: 1.25rem;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Estilo para el precio del producto */
+.precio_relacionado {
+    color: #ff0000;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* Estilo para el botón de "Más Detalles" */
+.relacionados .btn-warning {
+    background-color: #FFC107;
+    border: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.relacionados .btn-warning:hover {
+    background-color: #FFB300;
+}
+
+/* Ajustes en pantallas mayores a 1200px (PC) */
+@media (min-width: 1200px) {
+    /* Muestra 4 productos por fila */
+    .relacionados {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+/* Ajustes en pantallas medianas (de 768px a 1200px) */
+@media (max-width: 1200px) and (min-width: 768px) {
+    /* Muestra 2 productos por fila en pantallas entre 768px y 1200px */
+    .relacionados {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* Ajustes en pantallas pequeñas (por debajo de 768px) */
+@media (max-width: 768px) {
+    /* Muestra 1 producto por fila */
+    .relacionados {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    /* Ajusta la altura de la imagen en pantallas pequeñas */
+    .relacionados .card-img-top {
+        height: 280px !important;
+    }
+}

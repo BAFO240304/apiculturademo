@@ -1,0 +1,349 @@
+/* Contenedor de toda la página */
+.container-content {
+    display: flex;
+    margin-top: 50px;
+}
+
+/* Barra lateral de filtros */
+.sidebar-filter {
+    position: fixed;
+    top: 110px;
+    width: 250px;
+    background-color: #ffffea;
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    margin-right: 20px;
+    z-index: 150;
+    color: #482200;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow-y: auto;
+}
+
+.tama {
+    max-width: 95%;
+    margin: auto;
+}
+
+/* Botón del acordeón */
+.accordion-button {
+    font-weight: bold;
+    color: #7c420b;
+    /* Color del texto */
+    background-color: #fffbc5;
+    /* Fondo suave */
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.accordion-button i {
+    margin-right: 10px;
+}
+
+.accordion-button:hover {
+    background-color: #fff885;
+    /* Fondo al pasar el mouse */
+}
+
+/* Cuerpo del acordeón */
+.accordion-body {
+    padding: 15px;
+    background-color: #fff;
+    /* Fondo del cuerpo */
+    color: #482200;
+}
+
+.parte_superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Botones de filtro */
+.filter-buttons {
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+.filter-buttons .btn {
+    width: 100%;
+    background-color: #e29400 !important;
+    /* Color principal de botón */
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.filter-buttons .btn:hover {
+    background-color: #bb6902;
+}
+
+/* Título y subtítulos */
+.sidebar-filter h4 {
+    font-size: 20px;
+    color: #482200;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.filter-section h5 {
+    font-size: 16px;
+    color: #7c420b;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+/* Estilos para checkboxes */
+.filter-section div {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.filter-buttons .btn-warning {
+    background-color: #e29400;
+    /* Color de fondo del botón Filtrar */
+    border: none;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.filter-section input[type="checkbox"] {
+    margin-right: 8px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #bb6902 !important;
+    transform-origin: center;
+    transition: transform 0.2s ease-in-out, background-color 0.3s;
+}
+
+.filter-section input[type="checkbox"]:checked {
+    transform: scale(1.2);
+}
+
+/* Hover para opciones de filtro */
+.filter-section div:hover {
+    background-color: #fff885;
+    /* Fondo de hover */
+    border-radius: 4px;
+    padding-left: 4px;
+    transition: background-color 0.3s;
+}
+
+/* Botón de Filtrar y Restablecer */
+.btn-primary {
+    background-color: #e29400;
+    border-color: #e29400;
+    color: #fff;
+    margin-top: 15px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #bb6902;
+}
+
+.btn-secondary {
+    background-color: #ffee46;
+    color: #482200;
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* Animación para checkbox */
+@keyframes checkmark {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.4);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+input[type="checkbox"]:checked {
+    animation: checkmark 0.4s ease-in-out;
+}
+
+/* Sección principal del contenido */
+.main-content {
+    flex-grow: 1;
+    margin-top: 120px;
+    padding: 20px;
+    background-color: #ffffea;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-left: 270px;
+}
+
+.card {
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    /* Efecto de aumento al pasar el cursor */
+}
+
+/* Asegura que las imágenes de las tarjetas tengan el mismo tamaño y no se desborden */
+.card-img-top {
+    width: 100%;
+    height: 220px; /* Altura uniforme para todas las imágenes */
+    object-fit: cover; /* Recorta la imagen manteniendo la proporción */
+    border-bottom: 1px solid #ddd;
+    display: block; /* Asegura que la imagen no se desborde */
+    overflow: hidden; /* Prevenir el desbordamiento */
+}
+.card-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #482200;
+    margin-bottom: 5px;
+}
+
+.card-precio {
+    font-size: 1.1rem;
+    color: #ff2f00;
+    /* Destaca el precio */
+    margin-top: 5px;
+}
+
+.card-text {
+    font-size: 1rem;
+}
+
+/* Espaciado entre tarjetas */
+.row>.col-12,
+.col-sm-6,
+.col-md-4,
+.col-lg-3 {
+    padding: 10px;
+}
+.parte_superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filtro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Espacio entre el campo de texto y el botón */
+}
+
+/* Centrar el contenido del campo de texto */
+.input_filtro {
+    text-align: center;
+}
+
+@media (max-width: 630px) {
+    .parte_superior {
+        flex-direction: column;
+        text-align: center; /* Centra el texto en pantalla pequeña */
+    }    
+    .filtro {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        width: 100%; /* Ocupa el ancho completo */
+    }
+    .input_filtro,
+    .btn_filtrar {
+        width: 100%; /* Ocupa el ancho completo */
+    }
+    
+    .input_filtro, .btn_filtrar {
+        width: 100%; /* El campo de texto y el botón ocupan el ancho completo */
+    }
+}
+@media (max-width: 1000px) {
+    .card-img-top {
+        height: 320px; /* Ajusta la altura en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 768px) {
+    .col-12,
+    .col-sm-6,
+    .col-md-4,
+    .col-lg-3 {
+        width: 100%;
+    }
+
+    .card-img-top {
+        height: 380px; /* Ajusta la altura en pantallas más pequeñas */
+    }
+}
+/* Asegura que las tarjetas se adapten bien a diferentes tamaños de pantalla */
+@media (max-width: 768px) {
+    .col-md-3 {
+        width: 100%;
+        /* Para pantallas más pequeñas, las tarjetas ocupan todo el ancho */
+    }
+}
+
+/* Responsividad */
+@media (max-width: 1058px) {
+    .container-content {
+        flex-direction: column;
+        width: 100%;
+        margin-top: -45px;
+    }
+
+    .sidebar-filter {
+        width: 90%;
+        margin: auto;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-top: 150px !important;
+    }
+}
+
+/* Barra de búsqueda y botón */
+.input_filtro {
+    padding: 10px;
+    border: 1px solid #ffc107;
+    border-radius: 4px;
+    width: 200px;
+    transition: border-color 0.3s;
+}
+
+.input_filtro:focus {
+    border-color: #e29400;
+    outline: none;
+}
+
+.btn_filtrar {
+    padding: 10px 15px;
+    background-color: #ffc107;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn_filtrar:hover {
+    background-color: #e29400;
+}

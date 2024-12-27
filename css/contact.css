@@ -1,0 +1,64 @@
+.mapa_informacion{
+    margin-top: 150px !important;
+}
+.contact-container {
+    display: flex; /* Usar flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    max-width: 1000px; /* Ancho máximo */
+    margin: 30px auto; /* Espacio superior e inferior */
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.datos_generales {
+    flex: 1; /* Toma espacio disponible */
+    text-align: center; /* Centra el texto */
+    padding: 20px; /* Espacio interno */
+}
+
+.contact-info {
+    flex: 1; /* Hacer que la columna de información crezca */
+    min-width: 200px; /* Ancho mínimo para la columna de información */
+    margin: 10px; /* Espacio entre columnas */
+}
+
+.map-container {
+    flex: 2; /* Aumentar el espacio del mapa */
+    height: 300px;
+    border: 2px solid #ddd; /* Borde para el mapa */
+    border-radius: 8px; /* Esquinas redondeadas */
+    position: relative; /* Asegura que el contenedor sea relativo */
+    overflow: hidden; /* Oculta el desbordamiento */
+    padding-top: 56.25%; /* Mantiene la proporción 16:9 */
+    margin: 10px; /* Espacio entre columnas */
+}
+
+.map-container iframe {
+    position: absolute; /* Posiciona el iframe dentro del contenedor */
+    top: 0; /* Alinea al inicio del contenedor */
+    left: 0; /* Alinea al inicio del contenedor */
+    width: 100%; /* Ancho completo del iframe */
+    height: 100%; /* Alto completo del iframe */
+    border: 0; /* Elimina el borde del iframe */
+}
+
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column; /* Cambiar a una columna en pantallas pequeñas */
+    }
+    .map-container{
+        width: 100%;
+    }
+    .map-responsive{
+        width: 100% !important;
+        margin: auto;
+    }
+    
+    .contact-title {
+        font-size: 2em; /* Ajustar tamaño del título en pantallas pequeñas */
+    }
+}

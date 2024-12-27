@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logo.png" type="image/x-icon"> <!-- Reemplaza con la ruta correcta de tu logo -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/maximo.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/menu12.css">
+    <link rel="stylesheet" href="css/maximo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/menu_user.css">
+    <link rel="stylesheet" href="css/lateral_enlace.css">
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/mva.css">
+    <style>
+        .contact-text {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.05);
+            transition: background-color 0.3s;
+        }
+
+        .contact-text:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-link {
+            text-decoration: none;
+            color: #25D366;
+            font-weight: bold;
+            margin-left: 10px;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+
+        .contact-link:hover {
+            color: #1e8c34;
+        }
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .no-contact {
+            font-size: 1em;
+            color: #666;
+            margin-top: 20px;
+        }
+    </style>
+    <title>Contacto</title>
+</head>
+
+<body>
+    <!-- Menú -->
+    <nav class="navbar panal navbar-expand-lg navbar-light fixed-top shadow-sm">
+        <a class="navbar-brand" href="sitio.html">
+            <img src="img/logo.png" alt="Logo" class="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="sitio.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="acerca.html">Acerca de</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="productos.html">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="galeria.html">Galería</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacto.html">Ubíquenos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <main class="mapa_informacion">
+        <div class="contact-container">
+            <div class="datos_generales">
+                <div class="contact-info">
+                    <h3><b>Ubícanos en:</b></h3>
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 5px; fill: #007bff;">
+                            <path d="M12 10.9c-.61 0-1.1.49-1.1 1.1s.49 1.1 1.1 1.1c.61 0 1.1-.49 1.1-1.1s-.49-1.1-1.1-1.1zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm2.19 12.19L6 18l3.81-8.19L18 6l-3.81 8.19z">
+                                <animateTransform id="eosIconsCompass0" attributeName="transform" attributeType="XML" begin="0;eosIconsCompass2.end" dur="1s" from="-90 12 12" to="0 12 12" type="rotate" />
+                                <animateTransform id="eosIconsCompass1" attributeName="transform" attributeType="XML" begin="eosIconsCompass0.end" dur="1s" from="0 12 12" to="-90 12 12" type="rotate" />
+                                <animateTransform id="eosIconsCompass2" attributeName="transform" attributeType="XML" begin="eosIconsCompass1.end" dur="1s" from="-90 12 12" to="270 12 12" type="rotate" />
+                            </path>
+                        </svg>
+                        Lorem ipsum dolor sit amet.
+                    </p>
+                </div>
+            </div>
+            <div class="map-container">
+                <h3>Mapa:</h3>
+                <iframe class="map-responsive" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.290712658701!2d-122.41941848468192!3d37.77492977975997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808581cb7e4cf627%3A0x46819a648f4b15e9!2sSan%20Francisco%2C%20CA!5e0!3m2!1ses-419!2smx!4v1644267884306!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+        </div>
+        <div class="container text-center py-4">
+            <ul class="list-inline menu">
+                <li class="list-inline-item"><a class="menu__link" href="sitio.html">Inicio</a></li>
+                <li class="list-inline-item"><a class="menu__link" href="acerca.html">Acerca de</a></li>
+                <li class="list-inline-item"><a class="menu__link" href="productos.html">Productos</a></li>
+                <li class="list-inline-item"><a class="menu__link" href="galeria.html">Galeria</a></li>
+                <li class="list-inline-item"><a class="menu__link" href="contacto.html">Ubiquenos</a></li>
+            </ul>
+            <p class="footer_parrafo">&copy; 2024 | La Abeja Reina</p>
+        </div>
+    </footer>
+    <div class="position-fixed bottom-0 end-0 m-3">
+        <a href="https://wa.me/1234567890" target="_blank" class="btn contact-button whatsapp" data-bs-toggle="tooltip"
+            title="Escríbenos para más información">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://facebook.com" target="_blank" class="btn contact-button facebook" data-bs-toggle="tooltip"
+            title="Visita nuestra página de Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggleButton = document.querySelector('.navbar-toggler');
+            const menuCollapse = document.querySelector('#navbarNav');
+
+            function closeMenu() {
+                const bsCollapse = new bootstrap.Collapse(menuCollapse, {
+                    toggle: false
+                });
+                bsCollapse.hide();
+            }
+
+            // Cerrar el menú si se hace clic fuera de él
+            document.addEventListener('click', function (event) {
+                if (!menuCollapse.contains(event.target) && !menuToggleButton.contains(event.target)) {
+                    closeMenu();
+                }
+            });
+
+            // Inicializar tooltips
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+    </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
